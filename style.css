@@ -1,0 +1,240 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+
+* {
+    margin : 0px;
+    padding : 0px;
+    list-style: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    line-height: 24px;
+}
+
+:root{
+    --form-length: 400px;
+    --formRegister-length: 580px;
+    --active-form: #000;
+    --inactive-form: #c2c2c2;
+    --active-color: #c2c2c2;
+    --inactive-color: #000;
+    --nonHoverBoxShadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    --hoverBoxShadow:rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+body{
+    background-image: url(images/img1.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.global-container {
+    background: #fff;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    width: var(--form-length);
+    height: var(--form-length);  
+    transition: .5s;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    opacity: 0;
+    margin-bottom: 15px;
+}
+
+
+.global-container:hover {
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.form, .formRegister {
+    text-align: center;
+    position: relative;
+    margin-top: 50px;
+}
+
+.form input[type="text"], .form input[type = "password"], .formRegister input[type="text"], .formRegister input[type = "password"], .formRegister input[type = "date"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: .5px auto;
+    text-align: center;
+    border: 2px solid #3498bd;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    border-radius: 24px;
+    transition: .35s;
+}
+
+.form input[type="text"]:focus, .form input[type = "password"]:focus, .formRegister input[type="text"]:focus, .formRegister input[type = "password"]:focus, .formRegister input[type = "date"]:focus {
+        width: 280px;
+        border-color: #2ecc71;
+}
+
+.form input[type="submit"], .formRegister input[type="submit"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: .5px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 40px;
+    outline: none;
+    border-radius: 24px;
+    transition: .35s;
+    cursor: pointer;
+}
+
+.form input[type="submit"]:hover, .formRegister input[type="submit"]:hover {
+    background: #2ecc71;
+}
+
+.forgetPassword {
+    text-decoration: none;
+    position: relative;
+    bottom: 10px;
+}
+
+.forgetPassword::after{
+    content: "";
+    position: absolute;
+    width: 0;
+    transform: translateX(0);
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: rgb(175, 16, 214);
+    transform-origin: bottom right;
+    transition: .5s;
+}
+
+.forgetPassword:hover::after{
+    transform: translateX(-1);
+    transform-origin: bottom left;
+    width: 100%;
+}
+
+.logIn {
+    background: #000;
+    position: absolute;
+    color: #fff;
+    height: 40px;
+    width: calc(var(--form-length) / 2);
+    text-align: center;
+    cursor: pointer;
+    transition: all .3s ease;
+    box-shadow: var(--nonHoverBoxShadow);
+}
+
+.register {
+    background: #c2c2c2;
+    position: absolute;
+    right: 0;
+    color: #000;
+    height: 40px;
+    width: calc(var(--form-length) / 2);
+    text-align: center;
+    cursor: pointer;
+    transition: all .3s ease;
+    box-shadow: var(--nonHoverBoxShadow);
+}
+
+.logIn:hover, .register:hover {
+    box-shadow: var(--hoverBoxShadow);
+}
+
+.formIcons {
+    font-size: 24px;
+}
+
+#facebookIcon, #googleIcon, #twitterIcon {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    cursor: pointer;
+    transition: all .5s ease;
+} 
+
+#facebookIcon:hover, #googleIcon:hover, #twitterIcon:hover {
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    transform: translateY(-5px);
+} 
+
+#facebookIcon {
+    color: #1a75ff;
+}
+
+#googleIcon {
+    color: #ff8c1a;
+}
+
+#twitterIcon {
+    color: #00ccff;
+}
+
+h6 {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 400;
+    transition: all .3s ease 0s;
+}
+
+h6:hover {
+    transform: translate(-50%, -65%);
+}
+
+#registerIcon, #logIcon {
+    position: absolute;
+    top: 15px;
+    transition: all .3s ease 0s;
+}
+
+#registerIcon:hover, #logIcon:hover {
+    transform: translateY(-5px);
+}
+
+#logIcon {
+    left: 3rem;
+}
+
+#registerIcon {
+    left: 3rem;
+}
+
+
+@media only screen and (max-width: 600px) {
+    :root{
+      --formRegister-length : 300px;
+      --form-length: 330px;
+    }
+    #global-register {
+      height: 565px !important;
+    }
+    #global_logIn {
+        height: 400px !important;
+    }
+     #registerIcon {
+      left: 1.6rem !important;
+      transform: translateY(-1.8px);
+    }
+    #logIcon {
+      left: 2rem !important;
+      transform: translateY(-1.8px);
+    }
+  }
+  
+  @media only screen and (min-width: 600px) {
+    #password {
+      position: absolute; left: 3rem;
+    }
+    #confirm_password {
+      position: absolute; right: 3rem;
+      transform: translateY(-24px);
+    }
+    #passwordDiv {
+      margin-bottom: 24px;
+    }
+  }  
